@@ -1,0 +1,42 @@
+ALGORITHM linear_data
+VAR
+    set1 : ARRAY_OF INTEGER [100]; 
+    set2 : ARRAY_OF INTEGER [100]; 
+    sum,y=: INTEGER;
+BEGIN
+    sum:=0 ;
+    write ("give first set") ;
+    read (set1) ;
+    write("give second set") ; 
+    read (set2) ; 
+        FOR i FROM 0 TO set1.length-1 DO
+            y:=0
+            REPEAT
+                IF (set1[i] <> set2[y] )) THEN
+                        y:=y+1 ;
+                END_IF
+            UNTIL (set1[i]=set2[y] OR y>=set2.length)
+            IF (y=set2.length)
+                sum = sum + set1[i] ; 
+            END_IF
+            
+        END_FOR
+
+
+        FOR i FROM 0 TO set2.length-1 DO
+            y:=0
+            REPEAT
+                IF (set2[i] <> set1[y] )) THEN
+                        y:=y+1 ;
+                END_IF
+            UNTIL (set2[i]=set1[y] OR y>=set1.length)
+            IF (y=set1.length)
+                sum = sum + set2[i] ; 
+            END_IF
+            
+        END_FOR
+    
+    write (sum) ; 
+
+    
+END
